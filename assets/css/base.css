@@ -1,49 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
+:root {
     --color-text: #223d3c;
     --color-one: #245593;
     --color-two: #E1BD4E;
     --color-bg: #fff;
-    --font-family : "Open Sans", serif;
+    --font-family: "Open Sans", serif;
+    --color-border: #CECDCC;
 }
 
-body{
+body {
     font-family: var(--font-family);
+    position: relative;
 }
 
-a{
+a {
     text-decoration: none;
-    color: var(--color-text);
+    color: #000;
 }
 
-a:hover{
-    text-decoration: none;
-    color: var(--color-text);
+
+a:hover {
+    text-decoration: underline;
 }
 
-.button{
+.button {
     display: inline-block;
     background: #fff;
     padding: 10px 20px;
     width: 160px;
     border-radius: 30px;
+    text-align: center;
 }
 
-.button-one{
+.button-one {
     background-color: var(--color-one);
     color: #fff;
 }
-.button-one:hover{
+
+.button-one:hover {
     background: var(--color-two);
     color: #fff;
     transition: all 0.3s;
 }
 
-.inner-title{
+.inner-title {
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.inner-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--color-one);
+    width: 60px;
+    height: 4px;
 }
 
 /*Expand Button */
@@ -51,7 +70,9 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
 }
-#expandBtn, #loadMoreBtn{
+
+#expandBtn,
+#loadMoreBtn {
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -62,8 +83,10 @@ a:hover{
     width: 200px;
     border-radius: 30px;
     cursor: pointer;
-    i{
+
+    i {
         margin-left: 10px;
     }
 }
+
 /*End Expand Button */

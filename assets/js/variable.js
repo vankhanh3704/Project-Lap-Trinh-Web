@@ -146,6 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const boxData = data[i];
             const newBox = document.createElement('div');
             newBox.classList.add('col-xl-3');
+            newBox.classList.add('col-lg-3');
+            newBox.classList.add('col-md-6');
+            newBox.classList.add('col-sm-6');
+            newBox.classList.add('col-6');
             newBox.innerHTML = `
                 <a class="mua-ban-bds__box" href="#">
                     <div class="mua-ban-bds__image">

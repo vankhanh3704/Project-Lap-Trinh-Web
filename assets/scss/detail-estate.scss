@@ -1,0 +1,98 @@
+.detail-est{
+    margin-top: 80px;
+    padding: 40px 20px;
+    // border: solid 1px var(--color-one);
+    &__image{
+        width: 100%;
+        height: auto;
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+    &__form{
+
+    }
+    &__content{
+        margin-top: 20px;
+        &__title{
+            
+        }
+    }
+
+    &__short-info{
+        display: flex;
+        margin: 30px 0;
+        &--price, &--area, &--bed{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-right: 20px;
+
+            .title, .ext{
+                font-size: 14px;
+                color: #5E5E5E;
+                line-height: 20px;
+                display: block;
+            }
+
+            .value{
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    }
+    &__desc{
+        display: flex;
+        flex-wrap: wrap;
+        
+        &--item{
+            padding: 10px 5px;
+            border: 1px solid var(--color-border);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.pn-sidebar{
+
+    @media (max-width: 991.98px){
+        display: none;
+    }
+    border: solid 1px var(--color-one);
+    border-radius: 10px;
+    &__title{
+        background: var(--color-one);
+        padding: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        color: #fff;
+        font-size: 25px;
+    }
+    &__form{
+        margin: 0 auto;
+        text-align: center;
+        
+        input, select{
+            padding: 10px 5px;
+            width: 90%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: solid 1.5px var(--color-border);
+            color: #5E5E5E;
+        }
+
+
+        &--button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+    }
+}
