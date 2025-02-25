@@ -1,0 +1,13 @@
+.introduce{
+    margin: 70px 0;
+    &__content{
+        font-size: 18px;
+        ul{
+            li{
+                strong{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
