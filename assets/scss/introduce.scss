@@ -2,6 +2,10 @@
     margin: 70px 0;
     &__content{
         font-size: 18px;
+        br{
+           margin-top: 100px; 
+        }
+
         ul{
             li{
                 strong{

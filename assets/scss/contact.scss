@@ -1,0 +1,40 @@
+.contact{
+    margin-top: 60px;
+
+    &__content{
+        font-size: 18px;
+
+        iframe{
+            margin-top: 40px;
+        }
+    }
+
+
+    &__required{
+
+        .col-12{
+            input{
+                position: relative;
+                height: 200px;
+                &::placeholder{
+                    color: #B0B0B0;
+                    position: absolute;
+                    top: 15px;
+                    left: 5px;
+                }
+            }
+        }
+        input{
+            width: 100%;
+            padding: 15px 5px;
+            margin: 10px;
+            border: solid 1px #DCDCDC;
+            &::placeholder{
+                color: #B0B0B0;
+            }
+        }
+        button{
+            margin: 20px auto;
+        }
+    }
+}
