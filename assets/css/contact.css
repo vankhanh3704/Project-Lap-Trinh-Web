@@ -7,20 +7,26 @@
 .contact__content iframe {
   margin-top: 40px;
 }
-.contact__required .col-12 input {
+.contact__required .col-12 textarea {
   position: relative;
+  width: 100%;
   height: 200px;
+  resize: none;
+  height: 140px;
+  padding: 10px 5px;
+  border: solid 1px #DCDCDC;
 }
-.contact__required .col-12 input::placeholder {
+.contact__required .col-12 textarea::placeholder {
   color: #B0B0B0;
   position: absolute;
   top: 15px;
   left: 5px;
 }
 .contact__required input {
+  display: block;
   width: 100%;
   padding: 15px 5px;
-  margin: 10px;
+  margin-bottom: 20px;
   border: solid 1px #DCDCDC;
 }
 .contact__required input::placeholder {
