@@ -98,4 +98,36 @@ a:hover {
     }
 }
 
+.assignment{
+    color: var(--color-one);
+    border: none; 
+    background: none; 
+    font-size: 20px; 
+    padding: 0 5px;
+
+}
+.assignment:hover{
+    color: rgb(0, 51, 255);
+}
+
+.delete{
+    color: var(--red);
+    border: none; 
+    background: none; 
+    font-size: 20px; 
+    padding: 0 5px;
+}
+.delete:hover{
+    color: rgb(162, 37, 37);
+}
+.fix{
+    color: green;
+    border: none; 
+    background: none; 
+    font-size: 20px; 
+    padding: 0 5px;
+}
+.fix:hover{
+    color: #398d54;
+}
 /*End Expand Button */

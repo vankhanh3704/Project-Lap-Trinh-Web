@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/admin.css">
+
     <title>Quản trị viên</title>
 </head>
 
@@ -19,7 +21,7 @@
     <div class="sidebar">
         <div class="sidebar-brand">
             <h2>
-                <a href="#" style="color: #fff;">
+                <a href="/index.html" style="color: #fff;">
                     <span class="las la-home">
                     </span>
                     <span>Trang chủ</span>
@@ -61,7 +63,7 @@
                 </h2>
             </div>
             <div class="user-wrapper">
-                <img src="img/2.img" alt="" width="30px" height="30px">
+                <img src="" alt="" width="30px" height="30px">
                 <div>
                     <h4>John Doe</h4>
                     <small>Super admin</small>
@@ -216,7 +218,7 @@
                 </div>
             </div>
             <div class="pull-right">
-                <a href="/admin/building-edit">
+                <a href="/building-edit.html">
                     <button class="btn btn-add" title="Thêm tòa nhà">
                         <i class="las la-plus"></i>
                         Thêm toà nhà
@@ -270,17 +272,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -294,7 +293,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -304,17 +303,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -328,7 +324,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -338,17 +334,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -362,7 +355,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -372,17 +365,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -396,7 +386,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -406,17 +396,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -430,7 +417,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -440,17 +427,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -464,7 +448,7 @@
                                         </label>
                                     </td>
                                     <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
                                     <td>2</td>
                                     <td>Nguyễn Văn A</td>
                                     <td>0123456789</td>
@@ -474,187 +458,14 @@
                                     <td>5%</td>
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button class="assignment" title="Giao tòa nhà"
+                                                onclick="assignmentBuilding(1);">
                                                 <i class="las la-plus-circle"></i>
                                             </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
+                                            <a class="fix" title="Sửa tòa nhà" href="">
                                                 <i class="las la-pen"></i>
                                             </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-times-circle"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="checkList" value="1">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
-                                    <td>2</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>0123456789</td>
-                                    <td>500m²</td>
-                                    <td>200m²</td>
-                                    <td>300m²</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-plus-circle"></i>
-                                            </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
-                                                <i class="las la-pen"></i>
-                                            </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-times-circle"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="checkList" value="1">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
-                                    <td>2</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>0123456789</td>
-                                    <td>500m²</td>
-                                    <td>200m²</td>
-                                    <td>300m²</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-plus-circle"></i>
-                                            </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
-                                                <i class="las la-pen"></i>
-                                            </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-times-circle"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="checkList" value="1">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
-                                    <td>2</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>0123456789</td>
-                                    <td>500m²</td>
-                                    <td>200m²</td>
-                                    <td>300m²</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-plus-circle"></i>
-                                            </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
-                                                <i class="las la-pen"></i>
-                                            </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-times-circle"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="checkList" value="1">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
-                                    <td>2</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>0123456789</td>
-                                    <td>500m²</td>
-                                    <td>200m²</td>
-                                    <td>300m²</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-plus-circle"></i>
-                                            </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
-                                                <i class="las la-pen"></i>
-                                            </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-times-circle"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace" name="checkList" value="1">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td>Tòa nhà A</td>
-                                    <td>123 Đường ABC</td>
-                                    <td>2</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>0123456789</td>
-                                    <td>500m²</td>
-                                    <td>200m²</td>
-                                    <td>300m²</td>
-                                    <td>5%</td>
-                                    <td>
-                                        <div class="hidden-sm hidden-xs btn-group">
-                                            <button class="" title="Giao tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
-                                                <i class="las la-plus-circle"></i>
-                                            </button>
-                                            <a class="" title="Sửa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
-                                                href="">
-                                                <i class="las la-pen"></i>
-                                            </a>
-                                            <button title="Xóa tòa nhà"
-                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                            <button title="Xóa tòa nhà" class="delete">
                                                 <i class="las la-times-circle"></i>
                                             </button>
                                         </div>
@@ -679,132 +490,182 @@
         </main>
     </div>
     </div>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.slim.min.js"></script>
+    <div class="modal fade" id="assignmentBuildingModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Danh sách nhân viên</h4>
+                </div>
+                <div class="modal-body">
+                    <table style="margin: 3em 0 1.5em;" class="table table-striped table-bordered table-hover"
+                        id="staffList">
+                        <thead>
+                            <tr>
+                                <th class="center">
+                                    Chọn
+                                </th>
+                                <th>Tên nhân viên</th>
+                            </tr>
+                        </thead>
 
-    <script>
-        function activateLink(event) {
-            var links = document.querySelectorAll('.sidebar-menu a');
-            links.forEach(link => {
-                link.classList.remove('active');
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <input type="hidden" name="buildingId" id="buildingId" value="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btnassignmentBuilding">Giao tòa nhà</button>
+                    <button type="button" class="btn btn-default" id="">Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.slim.min.js"></script>
+
+<script>
+    function activateLink(event) {
+        var links = document.querySelectorAll('.sidebar-menu a');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+    }
+    // JavaScript xử lý phân trang
+    document.addEventListener('DOMContentLoaded', function () {
+        const table = document.getElementById('tableList');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+
+        // Hàm hiển thị trang
+        function showPage(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            rows.forEach((row, index) => {
+                row.style.display = (index >= start && index < end) ? '' : 'none';
             });
-            event.currentTarget.classList.add('active');
         }
-        // JavaScript xử lý phân trang
-        document.addEventListener('DOMContentLoaded', function () {
-            const table = document.getElementById('tableList');
-            const tbody = table.querySelector('tbody');
-            const rows = Array.from(tbody.querySelectorAll('tr'));
-            const itemsPerPage = 5;
-            let currentPage = 1;
-            
 
-            // Hàm hiển thị trang
-            function showPage(page) {
-                const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
+        // Hàm tạo nút phân trang
+        function updatePagination() {
+            const totalPages = Math.ceil(rows.length / itemsPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            pageNumbers.innerHTML = '';
 
-                rows.forEach((row, index) => {
-                    row.style.display = (index >= start && index < end) ? '' : 'none';
-                });
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.className = `page-number ${i === currentPage ? 'active' : ''}`;
+                button.textContent = i;
+                button.onclick = () => {
+                    currentPage = i;
+                    showPage(currentPage);
+                    updatePagination();
+                };
+                pageNumbers.appendChild(button);
+            }
+        }
+
+        // Xử lý nút Previous
+        document.getElementById('prevPage').onclick = () => {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updatePagination();
+            }
+        };
+
+        // Xử lý nút Next
+        document.getElementById('nextPage').onclick = () => {
+            const totalPages = Math.ceil(rows.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updatePagination();
+            }
+        };
+
+        // Khởi tạo
+        showPage(currentPage);
+        updatePagination();
+
+        function generatePageNumbers(totalPages, currentPage) {
+            const pages = [];
+            const maxVisible = 3; // Số trang hiển thị tối đa không bao gồm ...
+
+            if (totalPages <= 5) {
+                return Array.from({ length: totalPages }, (_, i) => i + 1);
             }
 
-            // Hàm tạo nút phân trang
-            function updatePagination() {
-                const totalPages = Math.ceil(rows.length / itemsPerPage);
-                const pageNumbers = document.getElementById('pageNumbers');
-                pageNumbers.innerHTML = '';
+            let start = Math.max(2, currentPage - 1);
+            let end = Math.min(totalPages - 1, currentPage + 1);
 
-                for (let i = 1; i <= totalPages; i++) {
+            pages.push(1);
+
+            if (start > 2) pages.push('...');
+            for (let i = start; i <= end; i++) pages.push(i);
+            if (end < totalPages - 1) pages.push('...');
+
+            pages.push(totalPages);
+
+            return pages;
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(rows.length / itemsPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            pageNumbers.innerHTML = '';
+
+            const pages = generatePageNumbers(totalPages, currentPage);
+
+            pages.forEach(page => {
+                if (page === '...') {
+                    const span = document.createElement('span');
+                    span.className = 'ellipsis';
+                    span.textContent = '...';
+                    pageNumbers.appendChild(span);
+                } else {
                     const button = document.createElement('button');
-                    button.className = `page-number ${i === currentPage ? 'active' : ''}`;
-                    button.textContent = i;
+                    button.className = `page-number ${page === currentPage ? 'active' : ''}`;
+                    button.textContent = page;
                     button.onclick = () => {
-                        currentPage = i;
+                        currentPage = page;
                         showPage(currentPage);
                         updatePagination();
                     };
                     pageNumbers.appendChild(button);
                 }
-            }
+            });
 
-            // Xử lý nút Previous
-            document.getElementById('prevPage').onclick = () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    showPage(currentPage);
-                    updatePagination();
-                }
-            };
+            // Update trạng thái nút Previous/Next
+            document.getElementById('prevPage').disabled = currentPage === 1;
+            document.getElementById('nextPage').disabled = currentPage === totalPages;
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy nút "Giao tòa nhà"
+        const btnAssignBuilding = document.getElementById('btnAssignBuilding');
 
-            // Xử lý nút Next
-            document.getElementById('nextPage').onclick = () => {
-                const totalPages = Math.ceil(rows.length / itemsPerPage);
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    showPage(currentPage);
-                    updatePagination();
-                }
-            };
+        // Lấy modal
+        const assignmentBuildingModal = new bootstrap.Modal(document.getElementById('assignmentBuildingModal'));
 
-            // Khởi tạo
-            showPage(currentPage);
-            updatePagination();
-
-            function generatePageNumbers(totalPages, currentPage) {
-                const pages = [];
-                const maxVisible = 3; // Số trang hiển thị tối đa không bao gồm ...
-
-                if (totalPages <= 5) {
-                    return Array.from({ length: totalPages }, (_, i) => i + 1);
-                }
-
-                let start = Math.max(2, currentPage - 1);
-                let end = Math.min(totalPages - 1, currentPage + 1);
-
-                pages.push(1);
-
-                if (start > 2) pages.push('...');
-                for (let i = start; i <= end; i++) pages.push(i);
-                if (end < totalPages - 1) pages.push('...');
-
-                pages.push(totalPages);
-
-                return pages;
-            }
-
-            function updatePagination() {
-                const totalPages = Math.ceil(rows.length / itemsPerPage);
-                const pageNumbers = document.getElementById('pageNumbers');
-                pageNumbers.innerHTML = '';
-
-                const pages = generatePageNumbers(totalPages, currentPage);
-
-                pages.forEach(page => {
-                    if (page === '...') {
-                        const span = document.createElement('span');
-                        span.className = 'ellipsis';
-                        span.textContent = '...';
-                        pageNumbers.appendChild(span);
-                    } else {
-                        const button = document.createElement('button');
-                        button.className = `page-number ${page === currentPage ? 'active' : ''}`;
-                        button.textContent = page;
-                        button.onclick = () => {
-                            currentPage = page;
-                            showPage(currentPage);
-                            updatePagination();
-                        };
-                        pageNumbers.appendChild(button);
-                    }
-                });
-
-                // Update trạng thái nút Previous/Next
-                document.getElementById('prevPage').disabled = currentPage === 1;
-                document.getElementById('nextPage').disabled = currentPage === totalPages;
-            }
+        // Thêm sự kiện click cho nút "Giao tòa nhà"
+        btnAssignBuilding.addEventListener('click', function () {
+            // Hiển thị modal
+            assignmentBuildingModal.show();
         });
-    </script>
-</body>
+    });
+</script>
 
 </html>

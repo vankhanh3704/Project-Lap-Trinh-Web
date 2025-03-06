@@ -131,6 +131,9 @@
   gap: 5px;
 }
 
+.pn-sidebar {
+  margin-bottom: 80px;
+}
 @media (max-width: 991.98px) {
   .pn-sidebar {
     display: block;
