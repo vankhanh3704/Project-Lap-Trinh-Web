@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <title>Quản trị viên</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="nav-toggle">
+    <!-- Menu -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>
+                <a href="#" style="color: #fff;">
+                    <span class="las la-home">
+                    </span>
+                    <span>Trang chủ</span>
+                </a>
+
+            </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin-manager-building.html" class="active" onclick="activateLink(event)">
+                        <span class="las la-igloo"></span>
+                        <span>Quản lý toà nhà</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-user.html" onclick="activateLink(event)">
+                        <span class="las la-user-circle"></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-customer.html" onclick="activateLink(event)">
+                        <span class="las la-users"></span>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2> <label for="nav-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Quản lý khách hàng
+                </h2>
+            </div>
+            <div class="user-wrapper">
+                <img src="img/2.img" alt="" width="30px" height="30px">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+        <main class="main-content-inner">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="widget-box">
+                            <div class="widget-box__title">
+                                <h5>
+                                    <i class="las la-tools"></i>
+                                    Thêm hoặc sửa khách hàng
+                                </h5>
+                            </div>
+                            <div class="widget-box__body">
+                                <div class="widget-box__main">
+                                    <form modelAttribute="model" id="formEdit" method="GET">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tên khách hàng</label>
+                                                        <input type="text" class="form-control" id="userName" path="userName">
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Số điện thoại</label>
+                                                        <input type="text" class="form-control" name="managerPhone" path="fullName" id="fullName">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Email</label>
+                                                        <input type="text" class="form-control" name="managerPhone">
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tên công ty</label>
+                                                        <input type="text" class="form-control" name="managerPhone">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Yêu cầu</label>
+                                                        <input type="text" class="form-control" name="managerPhone">
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tình trạng xử lý</label>
+                                                        <select class="form-control" name="district">
+                                                            <option value="">---Chọn tình trạng---</option>
+                                                            <option value="TINH_1">Đã xử lý</option>
+                                                            <option value="TINH_2">Đang xử lý</option>
+                                                            <option value="TINH_2">Chưa xử lý</option>
+                                                        </select>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-xl-12 flex-end">
+                                                <button type="button" class="btn btn-success" id="btnAddOrUpdateBuilding">Cập nhật khách hàng</button>
+                                            <button type="button" class="btn btn-warning" id="btnCancel">Hủy thao tác</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right">
+                    <h4>Chăm sóc khách hàng</h4>
+            </div>
+            <button class="btn btn-add" title="Thêm tòa nhà" style="margin: 20px 0px 40px 20px ">
+                <i class="lar la-hand-point-right"></i>
+                Add
+            </button>
+            <div class="page-content">
+                <div class="row" style="font-family: 'Times New Roman', Times, serif;">
+                    <div class="col-xl-12">
+                        <table id="tableList" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Ngày tạo</th>
+                                    <th>Người tạo</th>
+                                    <th>Ngày sửa</th>
+                                    <th>Người sửa</th>
+                                    <th>Chi tiết giao dịch</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <td>2025-02-24 10:13:18.0</td>
+                                    <td>nguyenvanb</td>
+                                    <td>2025-02-24 15:13:22.0</td>
+                                    <td>khanhvan</td>
+                                    <td>Gọi điện, gửi email hoặc tin nhắn để hỏi thăm</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right">
+                <h4>Dẫn khách hàng đi xem nhà</h4>
+        </div>
+        <button class="btn btn-add" title="Thêm tòa nhà" style="margin: 20px 0px 40px 20px ">
+            <i class="lar la-hand-point-right"></i>
+            Add
+        </button>
+        <div class="page-content">
+            <div class="row" style="font-family: 'Times New Roman', Times, serif;">
+                <div class="col-xl-12">
+                    <table id="tableList" class="table table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <th>Ngày tạo</th>
+                                <th>Người tạo</th>
+                                <th>Ngày sửa</th>
+                                <th>Người sửa</th>
+                                <th>Chi tiết giao dịch</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                                <td>2025-02-24 10:13:18.0</td>
+                                <td>nguyenvanb</td>
+                                <td>2025-02-24 15:13:22.0</td>
+                                <td>khanhvan</td>
+                                <td>Gọi điện, gửi email hoặc tin nhắn để hỏi thăm</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                       
+                                        <a class="" title="Sửa tòa nhà"
+                                            style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                            href="">
+                                            <i class="las la-pen"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+            
+        </main>
+    </div>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.slim.min.js"></script>
+
+    
+</body>
+
+</html>

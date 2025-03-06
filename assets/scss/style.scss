@@ -217,7 +217,9 @@
 		height: auto;
 		position: relative;
 		overflow: hidden;
-		border-radius: 5px;
+		border-top-left-radius: 5px;
+			/* Bo tròn góc trên bên trái */
+			border-top-right-radius: 5px;
 		img {
 			width: 100%;
 			height: 100%;

@@ -172,7 +172,9 @@
   height: auto;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  /* Bo tròn góc trên bên trái */
+  border-top-right-radius: 5px;
 }
 .mua-ban-bds__image img {
   width: 100%;

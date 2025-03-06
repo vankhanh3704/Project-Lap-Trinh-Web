@@ -2,15 +2,24 @@
 
 :root {
     --color-text: #223d3c;
-    --color-one: #245593;
+    --color-one: #055699;
     --color-two: #E1BD4E;
     --color-bg: #fff;
     --font-family: "Open Sans", serif;
     --color-border: #CECDCC;
 }
 
-body {
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
     font-family: var(--font-family);
+}
+
+body {
+    
     position: relative;
 }
 
@@ -21,7 +30,7 @@ a {
 
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .button {

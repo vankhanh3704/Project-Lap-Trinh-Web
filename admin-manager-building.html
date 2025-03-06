@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <title>Quản trị viên</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="nav-toggle">
+    <!-- Menu -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>
+                <a href="#" style="color: #fff;">
+                    <span class="las la-home">
+                    </span>
+                    <span>Trang chủ</span>
+                </a>
+
+            </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin-manager-building.html" class="active" onclick="activateLink(event)">
+                        <span class="las la-igloo"></span>
+                        <span>Quản lý toà nhà</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-user.html" onclick="activateLink(event)">
+                        <span class="las la-user-circle"></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-customer.html" onclick="activateLink(event)">
+                        <span class="las la-users"></span>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2> <label for="nav-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Quản lý toà nhà
+                </h2>
+            </div>
+            <div class="user-wrapper">
+                <img src="img/2.img" alt="" width="30px" height="30px">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+        <main class="main-content-inner">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="widget-box">
+                            <div class="widget-box__title">
+                                <h5>
+                                    <i class="las la-search"></i>
+                                    Tìm kiếm
+                                </h5>
+                            </div>
+                            <div class="widget-box__body">
+                                <div class="widget-box__main">
+                                    <form id="listForm" modelAttribute="modelSearch" action="${buildingListURL}"
+                                        method="GET">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tên tòa nhà</label>
+                                                        <input class="form-control" path="name" />
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tỉnh/Thành phố</label>
+                                                        <select class="form-control" name="district">
+                                                            <option value="">---Chọn Tỉnh/Thành phố---</option>
+                                                            <option value="TINH_1">Tp. Hồ Chí Minh</option>
+                                                            <option value="TINH_2">Hà Nội</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Quận/Huyện</label>
+                                                        <input class="form-control" path="district" />
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Phường/Xã</label>
+                                                        <input class="form-control" path="ward" />
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Đường/Phố</label>
+                                                        <input class="form-control" path="street" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích sàn</label>
+                                                        <input class="form-control" path="floorArea" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Số tầng hầm</label>
+                                                        <input class="form-control" path="numberOfBasement" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Hướng</label>
+                                                        <input class="form-control" path="direction" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Hạng</label>
+                                                        <input class="form-control" path="level" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích từ</label>
+                                                        <input type="number" class="form-control" name="areaFrom">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích đến</label>
+                                                        <input type="number" class="form-control" name="areaTo">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Giá thuê từ</label>
+                                                        <input type="number" class="form-control" name="rentPriceFrom">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Giá thuê đến</label>
+                                                        <input type="number" class="form-control" name="rentPriceTo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Tên quản lý</label>
+                                                        <input type="text" class="form-control" name="managerName">
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">SĐT quản lý</label>
+                                                        <input type="text" class="form-control" name="managerPhone">
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Nhân viên</label>
+                                                        <select class="form-control" name="staffId">
+                                                            <option value="">---Chọn nhân viên---</option>
+                                                            <option value="1">Nhân viên 1</option>
+                                                            <option value="2">Nhân viên 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name pad-20px">Loại toà nhà</label>
+                                                        <span>
+                                                            <input id="typeCode1" name="typeCode" type="checkbox"
+                                                                value="NGUYEN_CAN" />
+                                                            <label for="typeCode1">Nguy&ecirc;n căn</label>
+                                                        </span>
+                                                        <span>
+                                                            <input id="typeCode2" name="typeCode" type="checkbox"
+                                                                value="NOI_THAT" />
+                                                            <label for="typeCode2">Nội thất</label>
+                                                        </span>
+                                                        <span>
+                                                            <input id="typeCode3" name="typeCode" type="checkbox"
+                                                                value="TANG_TRET" />
+                                                            <label for="typeCode3">Tầng trệt</label>
+                                                        </span>
+                                                        <input type="hidden" name="_typeCode" value="on" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 flex-end">
+                                                <button type="button" class="btn btn-xs btn-info"
+                                                    id="btnSearchBuilding">
+                                                    <i class="las la-search"></i>
+                                                    Tìm kiếm
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right">
+                <a href="/admin/building-edit">
+                    <button class="btn btn-add" title="Thêm tòa nhà">
+                        <i class="las la-plus"></i>
+                        Thêm toà nhà
+                    </button>
+                </a>
+                <button class="btn btn-rev" title="Xóa tòa nhà" id="btnDeleteBuilding">
+                    <i class="las la-trash-alt"></i>
+                    Xoá toà nhà
+                </button>
+            </div>
+            <div class="page-content">
+                <div class="row" style="font-family: 'Times New Roman', Times, serif;">
+                    <div class="col-xl-12">
+                        <table id="tableList" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="center select-cell">
+                                        <fieldset class="pos-rel">
+                                            <input type="checkbox" class="ace" id="checkAll">
+                                            <span class="lbl"></span>
+                                        </fieldset>
+                                    </th>
+                                    <th>Tên tòa nhà</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số tầng hầm</th>
+                                    <th>Tên quản lý</th>
+                                    <th>Số điện thoại quản lý</th>
+                                    <th>D.Tích sàn</th>
+                                    <th>D.Tích trống</th>
+                                    <th>D.Tích thuê</th>
+                                    <th>Phí mô giới</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC, Phường avc, QUận Hoàng Mai, Hà Nội</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" name="checkList" value="1">
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>Tòa nhà A</td>
+                                    <td>123 Đường ABC</td>
+                                    <td>2</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>0123456789</td>
+                                    <td>500m²</td>
+                                    <td>200m²</td>
+                                    <td>300m²</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <button class="" title="Giao tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-plus-circle"></i>
+                                            </button>
+                                            <a class="" title="Sửa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;"
+                                                href="">
+                                                <i class="las la-pen"></i>
+                                            </a>
+                                            <button title="Xóa tòa nhà"
+                                                style="border: none; background: none; font-size: 20px; padding: 0 5px;">
+                                                <i class="las la-times-circle"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Thêm các hàng khác tương tự nếu cần -->
+                            </tbody>
+
+                        </table>
+                        <!-- Thêm phân trang dưới bảng -->
+                        <div class="pagination-container">
+                            <div class="pagination" id="pagination">
+                                <button class="page-nav" id="prevPage">←</button>
+                                <div class="page-numbers" id="pageNumbers"></div>
+                                <button class="page-nav" id="nextPage">→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.slim.min.js"></script>
+
+    <script>
+        function activateLink(event) {
+            var links = document.querySelectorAll('.sidebar-menu a');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+        // JavaScript xử lý phân trang
+        document.addEventListener('DOMContentLoaded', function () {
+            const table = document.getElementById('tableList');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const itemsPerPage = 5;
+            let currentPage = 1;
+            
+
+            // Hàm hiển thị trang
+            function showPage(page) {
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                rows.forEach((row, index) => {
+                    row.style.display = (index >= start && index < end) ? '' : 'none';
+                });
+            }
+
+            // Hàm tạo nút phân trang
+            function updatePagination() {
+                const totalPages = Math.ceil(rows.length / itemsPerPage);
+                const pageNumbers = document.getElementById('pageNumbers');
+                pageNumbers.innerHTML = '';
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const button = document.createElement('button');
+                    button.className = `page-number ${i === currentPage ? 'active' : ''}`;
+                    button.textContent = i;
+                    button.onclick = () => {
+                        currentPage = i;
+                        showPage(currentPage);
+                        updatePagination();
+                    };
+                    pageNumbers.appendChild(button);
+                }
+            }
+
+            // Xử lý nút Previous
+            document.getElementById('prevPage').onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                    updatePagination();
+                }
+            };
+
+            // Xử lý nút Next
+            document.getElementById('nextPage').onclick = () => {
+                const totalPages = Math.ceil(rows.length / itemsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showPage(currentPage);
+                    updatePagination();
+                }
+            };
+
+            // Khởi tạo
+            showPage(currentPage);
+            updatePagination();
+
+            function generatePageNumbers(totalPages, currentPage) {
+                const pages = [];
+                const maxVisible = 3; // Số trang hiển thị tối đa không bao gồm ...
+
+                if (totalPages <= 5) {
+                    return Array.from({ length: totalPages }, (_, i) => i + 1);
+                }
+
+                let start = Math.max(2, currentPage - 1);
+                let end = Math.min(totalPages - 1, currentPage + 1);
+
+                pages.push(1);
+
+                if (start > 2) pages.push('...');
+                for (let i = start; i <= end; i++) pages.push(i);
+                if (end < totalPages - 1) pages.push('...');
+
+                pages.push(totalPages);
+
+                return pages;
+            }
+
+            function updatePagination() {
+                const totalPages = Math.ceil(rows.length / itemsPerPage);
+                const pageNumbers = document.getElementById('pageNumbers');
+                pageNumbers.innerHTML = '';
+
+                const pages = generatePageNumbers(totalPages, currentPage);
+
+                pages.forEach(page => {
+                    if (page === '...') {
+                        const span = document.createElement('span');
+                        span.className = 'ellipsis';
+                        span.textContent = '...';
+                        pageNumbers.appendChild(span);
+                    } else {
+                        const button = document.createElement('button');
+                        button.className = `page-number ${page === currentPage ? 'active' : ''}`;
+                        button.textContent = page;
+                        button.onclick = () => {
+                            currentPage = page;
+                            showPage(currentPage);
+                            updatePagination();
+                        };
+                        pageNumbers.appendChild(button);
+                    }
+                });
+
+                // Update trạng thái nút Previous/Next
+                document.getElementById('prevPage').disabled = currentPage === 1;
+                document.getElementById('nextPage').disabled = currentPage === totalPages;
+            }
+        });
+    </script>
+</body>
+
+</html>

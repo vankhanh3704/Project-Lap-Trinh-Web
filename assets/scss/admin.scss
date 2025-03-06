@@ -1,0 +1,372 @@
+.sidebar {
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--color-one);
+    z-index: 100;
+    transition: width 200ms;
+
+    &-brand {
+        height: 200px;
+        padding: 5rem 2rem;
+        color: #fff;
+        border-bottom: solid;
+
+        span {
+            display: inline-block;
+            padding-right: 1rem;
+        }
+    }
+
+    &-menu {
+        margin-top: 1rem;
+
+        li {
+            width: 100%;
+            margin-bottom: 1.7rem;
+            padding-left: 1rem;
+        }
+
+        a {
+            padding-left: 1rem;
+            display: block;
+            color: #fff;
+            font-size: 1.1rem;
+
+            &.active {
+                background: #fff;
+                padding: 1rem;
+                color: var(--color-one);
+                border-radius: 30px 0 0 30px;
+            }
+
+            span:first-child {
+                font-size: 1.5rem;
+                padding-right: 1rem;
+            }
+
+            span:last-child {
+                font-weight: 600;
+            }
+
+        }
+    }
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+
+    small {
+        display: inline-block;
+        color: var(--color-one);
+        margin-top: -3px;
+    }
+}
+
+header {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 345px;
+    width: calc(100% - 345px);
+    top: 0;
+    z-index: 100;
+    transition: width 200ms;
+
+    h2 {
+        color: #222;
+    }
+
+    label span {
+        font-size: 1.7rem;
+        padding-left: 1rem;
+    }
+}
+
+#nav-toggle {
+    &:checked {
+        +.sidebar {
+            width: 70px;
+
+            li,
+            .sidebar-brand {
+                padding-left: 1rem;
+            }
+
+            li a {
+                padding-left: 0;
+
+                span {
+                    padding-left: 1rem;
+                }
+            }
+
+            .sidebar-brand h2 span:last-child,
+            li a span:last-child {
+                display: none;
+            }
+        }
+
+        ~.main-content {
+            margin-left: 70px;
+
+            header {
+                width: calc(100% - 70px);
+                left: 70px;
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 80px;
+    padding: 2rem 1.5rem;
+    min-height: calc(100vh - 90px);
+}
+
+.main-content {
+    transition: margin-left 200ms;
+    margin-left: 345px;
+    margin-top: 80px;
+
+    &-inner {
+        padding: 2rem 1.5rem;
+        min-height: calc(100vh - 90px);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.page-content {
+    background-color: #fff;
+    position: relative;
+    margin: 0;
+    padding: 8px 20px 24px;
+    margin-bottom: 70px;
+}
+
+.widget-box {
+    border-radius: 8px;
+    width: inherit;
+    padding: 0;
+    margin: 3px 0;
+    border: 1px solid #CCC;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &__title {
+        border-bottom: solid 2px var(--color-two);
+        width: 98%;
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 25px;
+
+        h5 {
+            font-size: 30px;
+            color: var(--color-one);
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+    }
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.flex-end {
+    margin-bottom: 20px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pad-20px {
+    padding-right: 20px;
+}
+
+.name {
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-control {
+    background-color: #F0F0F0;
+    border-color: #CACACA;
+}
+
+@media only screen and (max-width: 1200px) {
+    #nav-toggle:checked {
+        +.sidebar {
+            width: 70px;
+
+            li,
+            .sidebar-brand {
+                padding-left: 1rem;
+            }
+
+            li a {
+                padding-left: 0;
+
+                span {
+                    padding-left: 1rem;
+                }
+            }
+
+            .sidebar-brand h2 span:last-child,
+            li a span:last-child {
+                display: none;
+            }
+        }
+
+        ~.main-content {
+            margin-left: 70px;
+
+            header {
+                width: calc(100% - 70px);
+                left: 70px;
+            }
+        }
+    }
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 5px;
+
+    &-add {
+        background: #86FF5E;
+    }
+
+    &-rev {
+        background-color: #FF6B6B;
+    }
+}
+
+.pull-right {
+    margin-left: 20px;
+    border-bottom: solid 1px #CFCFCF;
+}
+
+.pos-rel {
+    margin: 0;
+}
+
+.table {
+    text-align: center;
+
+    thead {
+        color: #fff;
+        background: var(--color-one);
+        text-align: center;
+
+        th {
+            font-size: 14px;
+        }
+    }
+}
+
+// Variables có thể điều chỉnh
+$table-radius: 5px;
+$btn-radius: 5px;
+$cell-padding: 10px;
+
+#tableList {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: $table-radius;
+    overflow: hidden;
+    border: none !important; // Bỏ border của bảng
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    th,
+    td {
+        border: none !important; // Bỏ border của các ô
+        padding: 25px $cell-padding;
+        // căn giữa
+        vertical-align: middle !important;
+    }
+
+    thead {
+        tr:first-child {
+            th:first-child {
+                border-top-left-radius: $table-radius;
+            }
+
+            th:last-child {
+                border-top-right-radius: $table-radius;
+            }
+        }
+    }
+
+    tbody {
+        tr:last-child {
+            td:first-child {
+                border-bottom-left-radius: $table-radius;
+            }
+
+            td:last-child {
+                border-bottom-right-radius: $table-radius;
+            }
+        }
+    }
+
+    // Style cho các nút
+    .btn {
+        border-radius: $btn-radius !important;
+    }
+
+    // Optional: Thêm background để thấy rõ border-radius
+    background-color: #f8f9fa;
+}
+/* SCSS cho phân trang */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+    .pagination {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .ellipsis {
+            padding: 8px 12px;
+            color: #6c757d;
+            user-select: none;
+        }
+
+        .page-number {
+            min-width: 40px; // Đảm bảo các nút có kích thước đồng đều
+        }
+        .page-nav, .page-number {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background: #f8f9fa;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s;
+            
+            &:hover:not(.active) {
+                background: #e9ecef;
+            }
+            
+            &.active {
+                background: #007bff;
+                color: white;
+            }
+        }
+        
+        .page-numbers {
+            display: flex;
+            gap: 5px;
+        }
+    }
+}

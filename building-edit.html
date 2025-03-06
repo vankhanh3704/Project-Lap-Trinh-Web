@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <title>Quản trị viên</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="nav-toggle">
+    <!-- Menu -->
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>
+                <a href="#" style="color: #fff;">
+                    <span class="las la-home">
+                    </span>
+                    <span>Trang chủ</span>
+                </a>
+
+            </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/admin-manager-building.html" class="active" onclick="activateLink(event)">
+                        <span class="las la-igloo"></span>
+                        <span>Quản lý toà nhà</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-user.html" onclick="activateLink(event)">
+                        <span class="las la-user-circle"></span>
+                        <span>Quản lý tài khoản</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-manager-customer.html" onclick="activateLink(event)">
+                        <span class="las la-users"></span>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2> <label for="nav-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Quản lý toà nhà
+                </h2>
+            </div>
+            <div class="user-wrapper">
+                <img src="img/2.img" alt="" width="30px" height="30px">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+        <main class="main-content-inner">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="widget-box">
+                            <div class="widget-box__title">
+                                <h5>
+                                    <i class="las la-tools"></i>
+                                    Thêm toà nhà
+                                </h5>
+                            </div>
+                            <div class="widget-box__body">
+                                <div class="widget-box__main">
+                                    <form modelAttribute="buildingEdit" id="listForm" method="GET">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tên tòa nhà</label>
+                                                        <input class="form-control" path="name" />
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label class="name">Tỉnh/Thành phố</label>
+                                                        <select class="form-control" name="district">
+                                                            <option value="">---Chọn Tỉnh/Thành phố---</option>
+                                                            <option value="TINH_1">Tp. Hồ Chí Minh</option>
+                                                            <option value="TINH_2">Hà Nội</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Quận/Huyện</label>
+                                                        <input class="form-control" path="district" />
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Phường/Xã</label>
+                                                        <input class="form-control" path="ward" />
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Đường/Phố</label>
+                                                        <input class="form-control" path="street" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích sàn</label>
+                                                        <input class="form-control" path="floorArea" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Số tầng hầm</label>
+                                                        <input class="form-control" path="numberOfBasement" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Hướng</label>
+                                                        <input class="form-control" path="direction" />
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Hạng</label>
+                                                        <input class="form-control" path="level" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích từ</label>
+                                                        <input type="number" class="form-control" name="areaFrom">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Diện tích đến</label>
+                                                        <input type="number" class="form-control" name="areaTo">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Giá thuê từ</label>
+                                                        <input type="number" class="form-control" name="rentPriceFrom">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Giá thuê đến</label>
+                                                        <input type="number" class="form-control" name="rentPriceTo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Mô tả giá</label>
+                                                        <input type="text" class="form-control" name="rentpricedescription">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Phí dịch vụ</label>
+                                                        <input type="number" class="form-control" name="servicefee">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Phí ô tô</label>
+                                                        <input type="number" class="form-control" name="carfee">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Phí mô tô</label>
+                                                        <input type="number" class="form-control" name="motorbikefee">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Phí môi giới</label>
+                                                        <input type="text" class="form-control" name="brokeragefee">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Phí ngoài giờ</label>
+                                                        <input type="number" class="form-control" name="servicefee">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Đặt cọc</label>
+                                                        <input type="number" class="form-control" name="carfee">
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <label class="name">Thanh toán</label>
+                                                        <input type="number" class="form-control" name="brokeragefee">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Tên quản lý</label>
+                                                        <input type="text" class="form-control" name="managerName">
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">SĐT quản lý</label>
+                                                        <input type="text" class="form-control" name="managerPhone">
+                                                    </div>
+                                                    <div class="col-xl-4">
+                                                        <label class="name">Nhân viên</label>
+                                                        <select class="form-control" name="staffId">
+                                                            <option value="">---Chọn nhân viên---</option>
+                                                            <option value="1">Nhân viên 1</option>
+                                                            <option value="2">Nhân viên 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 no-padding-right">Hình đại diện</label>
+                                    <input class="col-sm-3 no-padding-right" type="file" id="uploadImage"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="form-group">
+                                                    <div class="col-xl-6">
+                                                        <label class="name pad-20px">Loại toà nhà</label>
+                                                        <span>
+                                                            <input id="typeCode1" name="typeCode" type="checkbox" value="NGUYEN_CAN" />
+                                                            <label for="typeCode1">Nguyên căn</label>
+                                                        </span>
+                                                        <span>
+                                                            <input id="typeCode2" name="typeCode" type="checkbox" value="NOI_THAT" />
+                                                            <label for="typeCode2">Nội thất</label>
+                                                        </span>
+                                                        <span>
+                                                            <input id="typeCode3" name="typeCode" type="checkbox" value="TANG_TRET"/>
+                                                            <label for="typeCode3">Tầng trệt</label>
+                                                        </span>
+                                                        <input type="hidden" name="_typeCode" value="on" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 flex-end">
+                                                <button type="button" class="btn btn-success" id="btnAddOrUpdateBuilding">Cập nhật tòa nhà</button>
+                                            <button type="button" class="btn btn-warning" id="btnCancel">Hủy thao tác</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.slim.min.js"></script>
+
+    
+</body>
+
+</html>
