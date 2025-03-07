@@ -131,3 +131,43 @@ a:hover {
     color: #398d54;
 }
 /*End Expand Button */
+
+/* search - sidebar */
+.pn-sidebar {
+    border: solid 1px var(--color-one);
+    border-radius: 10px;
+  }
+  @media (max-width: 991.98px) {
+    .pn-sidebar {
+      display: none;
+    }
+  }
+  .pn-sidebar__title {
+    background: var(--color-one);
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+  }
+  .pn-sidebar__form {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pn-sidebar__form input, .pn-sidebar__form select {
+    padding: 10px 5px;
+    width: 90%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: solid 1.5px var(--color-border);
+    color: #5E5E5E;
+  }
+  .pn-sidebar__form--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  
